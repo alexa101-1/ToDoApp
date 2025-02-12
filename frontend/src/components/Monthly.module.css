@@ -1,0 +1,100 @@
+.calendarWrapper {
+    /* Calendar container */
+    --calendar-bg: white;
+    --event-bg: #2563eb;
+    --event-hover: #1d4ed8;
+    --border-color: #e5e7eb;
+    --header-bg: #f8fafc;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+}
+
+.calendarWrapper :global(.rbc-calendar) {
+    @apply font-sans;
+}
+
+/* Header styling */
+.calendarWrapper :global(.rbc-toolbar) {
+    @apply mb-4 gap-4 flex-wrap;
+}
+
+.calendarWrapper :global(.rbc-toolbar button) {
+    @apply px-3 py-1.5 rounded-md border border-gray-200 text-sm font-medium
+    hover:bg-gray-50 transition-colors;
+}
+
+.calendarWrapper :global(.rbc-toolbar button.rbc-active) {
+    @apply bg-blue-600 text-white border-blue-600
+    hover:bg-blue-700 hover:border-blue-700;
+}
+
+/* Month view styling */
+.calendarWrapper :global(.rbc-month-view) {
+    @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.calendarWrapper :global(.rbc-header) {
+    @apply py-2 font-medium bg-gray-50 text-gray-600 border-b border-gray-200;
+}
+
+.calendarWrapper :global(.rbc-date-cell) {
+    @apply p-1 text-right text-sm;
+}
+
+.calendarWrapper :global(.rbc-today) {
+    @apply bg-blue-50;
+}
+
+/* Event styling */
+.calendarWrapper :global(.rbc-event) {
+    @apply bg-blue-600 border-none rounded-md py-0.5 px-1.5
+    hover:bg-blue-700 transition-colors cursor-pointer;
+}
+
+.calendarWrapper :global(.rbc-event.rbc-selected) {
+    @apply bg-blue-700;
+}
+
+.calendarWrapper :global(.rbc-event-content) {
+    @apply text-xs font-medium;
+}
+
+/* Off-range dates */
+.calendarWrapper :global(.rbc-off-range-bg) {
+    @apply bg-gray-50;
+}
+
+.calendarWrapper :global(.rbc-off-range) {
+    @apply text-gray-400;
+}
+
+/* Time grid (week/day view) */
+.calendarWrapper :global(.rbc-time-view) {
+    @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.calendarWrapper :global(.rbc-time-header) {
+    @apply border-gray-200;
+}
+
+.calendarWrapper :global(.rbc-time-content) {
+    @apply border-gray-200;
+}
+
+.calendarWrapper :global(.rbc-time-gutter) {
+    @apply text-sm text-gray-500;
+}
+
+/* Agenda view */
+.calendarWrapper :global(.rbc-agenda-view table.rbc-agenda-table) {
+    @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.calendarWrapper :global(.rbc-agenda-view table.rbc-agenda-table thead > tr > th) {
+    @apply bg-gray-50 py-2 px-3 text-left text-sm font-medium text-gray-600
+    border-b border-gray-200;
+}
+
+.calendarWrapper :global(.rbc-agenda-view table.rbc-agenda-table tbody > tr > td) {
+    @apply py-2 px-3 text-sm border-b border-gray-200;
+}
