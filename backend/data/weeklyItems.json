@@ -1,0 +1,55 @@
+[
+  {
+    "day": "Sunday",
+    "activities": [
+      "Excursion"
+    ]
+  },
+  {
+    "day": "Monday",
+    "activities": [
+      "fix documents import bug",
+      "board meeting"
+    ]
+  },
+  {
+    "day": "Tuesday",
+    "activities": [
+      "client presentation",
+      "team brainstorming session",
+      "check emails"
+    ]
+  },
+  {
+    "day": "Wednesday",
+    "activities": [
+      "update website content",
+      "team lunch",
+      "work on project proposal"
+    ]
+  },
+  {
+    "day": "Thursday",
+    "activities": [
+      "product testing",
+      "review financial reports",
+      "training session"
+    ]
+  },
+  {
+    "day": "Friday",
+    "activities": [
+      "end of week review",
+      "prepare for next week's meetings",
+      "finish project milestone"
+    ]
+  },
+  {
+    "day": "Saturday",
+    "activities": [
+      "grocery shopping",
+      "family time",
+      "relax and watch a movie"
+    ]
+  }
+]

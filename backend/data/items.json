@@ -1,0 +1,45 @@
+
+[
+    {
+      "category": "Work",
+      "items": [
+        "Finish project report",
+        "Attend team meeting",
+        "Respond to client emails",
+        "Prepare for presentation",
+        "Review pull requests"
+      ]
+    },
+    {
+      "category": "Personal Development",
+      "items": [
+        "Read 20 pages of a book",
+        "Take an online course",
+        "Practice meditation",
+        "Write in journal",
+        "Learn a new skill"
+      ]
+    },
+    {
+      "category": "Fitness",
+      "items": [
+        "Go for a 30-minute run",
+        "Do a yoga session"
+      ]
+    },
+    {
+      "category": "Home & Family",
+      "items": [
+        "Grocery shopping",
+        "Clean the living room",
+        "Cook a healthy meal",
+        "Call parents"
+      ]
+    },
+    {
+      "category": "Fun & Leisure",
+      "items": [
+        "Watch a new movie"
+      ]
+    }
+  ]

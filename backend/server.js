@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const todayRoutes = require('./routes/today');
 const monthlyRoutes = require('./routes/monthly')
+const weeklyRoutes = require('./routes/weekly')
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true })); // Parses URL-encoded data
 // Routes
 app.use('/api/today', todayRoutes);
 app.use('/api/monthly', monthlyRoutes);
+app.use('/api/weekly', weeklyRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
