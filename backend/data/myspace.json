@@ -1,0 +1,36 @@
+{
+  "upcomingEvents": [
+    {
+      "id": 1,
+      "title": "React Meetup 2025",
+      "date": "2025-03-15",
+      "time": "10:00 AM",
+      "location": "San Francisco, CA",
+      "description": "A meetup for React enthusiasts to discuss the latest trends."
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Conference",
+      "date": "2025-04-20",
+      "time": "9:00 AM",
+      "location": "New York, NY",
+      "description": "An annual conference covering modern JavaScript developments."
+    }
+  ],
+  "readingList": [
+    {
+      "id": 1,
+      "title": "Understanding React Hooks",
+      "author": "Dan Abramov",
+      "link": "https://reactjs.org/docs/hooks-intro.html",
+      "summary": "An in-depth look at how hooks simplify state management in React."
+    },
+    {
+      "id": 2,
+      "title": "JavaScript: The Good Parts",
+      "author": "Douglas Crockford",
+      "link": "https://example.com/js-good-parts",
+      "summary": "A classic book exploring the best features of JavaScript."
+    }
+  ]
+}

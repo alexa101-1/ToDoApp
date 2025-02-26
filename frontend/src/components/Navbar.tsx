@@ -1,6 +1,7 @@
 import {Link, useLocation} from 'react-router-dom';
 import classes from "./Navbar.module.css";
 import React from "react";
+import HomeButton from "./buttons/HomeButton.tsx";
 
 interface NavbarProps {
     links: string[];
@@ -18,6 +19,7 @@ const Navbar:React.FC<NavbarProps> = ({links}) => {
         <div className={classes.header}>
         <nav className="navbar">
             <div className={classes.navbarContainer}>
+                <HomeButton/>
                 <ul className={classes.navbarList}>
                     {links.map((link, index) => (
                         <li className={classes.navbarItem} key={index}>

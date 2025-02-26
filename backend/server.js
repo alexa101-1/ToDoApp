@@ -1,20 +1,15 @@
 const express = require('express');
 const cors = require('cors');
-const todayRoutes = require('./routes/today');
-const monthlyRoutes = require('./routes/monthly')
-const weeklyRoutes = require('./routes/weekly')
-
+const routes = require('./routes/routes');
 const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // Parses incoming JSON requests
-app.use(express.urlencoded({ extended: true })); // Parses URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api/today', todayRoutes);
-app.use('/api/monthly', monthlyRoutes);
-app.use('/api/weekly', weeklyRoutes);
+app.use(routes); // Mounting your routes
 
 // Start the server
 const PORT = process.env.PORT || 5000;

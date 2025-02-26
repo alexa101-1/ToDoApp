@@ -1,0 +1,19 @@
+.myspace-card{
+    display:flex;
+
+}
+
+.news{
+    display: flex;
+    flex-direction: row;
+}
+
+.upcomingEvents{
+    display: flex;
+    flex-direction: column;
+}
+
+.readingList{
+    display: flex;
+    flex-direction: row;
+}
