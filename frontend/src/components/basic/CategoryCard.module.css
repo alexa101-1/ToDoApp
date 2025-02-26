@@ -2,16 +2,19 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: auto;
     align-items: center;
+    overflow: hidden;
+
+
 }
 
 .title {
+    font-size: 24px;
     position: sticky;
     top: 0;
-    background-color: white;
+    color: #333652;
     padding: 10px 0;
-    margin: 0 30px;
+    margin: 0;
     z-index: 1;
     width: calc(100% - 20px); /* Adjusted to account for padding */
     text-align: left;
@@ -22,24 +25,138 @@
 .itemsList {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 0;
-    margin: 0;
     list-style: none;
-    flex: 1;
     width: 100%;
+    max-height: 400px;
     align-items: center;
+    overflow-y: scroll; /* Enables scrolling but hides the scrollbar */
 }
+
+/* Hide the scrollbar */
+.itemsList::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/* Optional: Styling for when the user hovers over the scrollable area */
+/*.itemsList:hover::-webkit-scrollbar {
+    width: 8px; !* Show the scrollbar on hover (optional) *!
+}*/
 
 .item {
     display: flex;
-    justify-content: space-between;
-    padding: 8px 10px; /* Changed to include horizontal padding */
-    width: calc(100% - 20px); /* Account for padding */
-    word-break: break-word; /* Handles long text */
+    flex-direction: row;
+    justify-content: flex-start;
+    /*flex-wrap: nowrap;*/
+    align-items: center;
+    width: 100%; /* Account for padding */
     box-sizing: border-box; /* Include padding in width calculation */
-    text-align: center;
+    margin:0;
+
+
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+    transition: background-color 0.3s ease;
+
 }
 
-.button{
-    color: #1a1a1a;
+.item > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Push content to opposite ends */
+    align-items: center;
+    background-color: #faf6f3;
+    color: #333652;
+    padding: 10px;
+    border-radius: 15px;
 }
+
+.itemName {
+    margin-right: 0;
+    flex-grow: 1;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    align-self: flex-start; /* Align to the top */
+    margin-top: 0; /* Add a small top margin */
+}
+
+.trash {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #333652;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Define the keyframes for the jiggle animation */
+@keyframes jiggle {
+    0% {
+        transform: scale(1) rotate(0deg); /* Normal size and rotation */
+    }
+    25% {
+        transform: scale(1.3) rotate(5deg); /* Grow bigger and rotate slightly */
+    }
+    50% {
+        transform: scale(1.2) rotate(-5deg); /* Reduce size a bit and rotate in the opposite direction */
+    }
+    75% {
+        transform: scale(1.3) rotate(3deg); /* Grow bigger again and rotate slightly */
+    }
+    100% {
+        transform: scale(1.2) rotate(0deg); /* Final size and no rotation */
+    }
+}
+
+/* Apply animation on hover */
+.trash:hover {
+    animation: jiggle 1s ease forwards; /* Run the jiggle animation once */
+}
+
+.check{
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #333652;
+    margin-left: 8px;
+}
+
+
+@keyframes boop {
+    0% {
+        transform: scale(1); /* Initial size */
+        color: #333652; /* Initial color */
+    }
+    50% {
+        transform: scale(1.5); /* Make the icon bigger */
+        color: #00a653; /* Change color to green */
+    }
+    100% {
+        transform: scale(1.5); /* Keep the icon big */
+        color: #00a653; /* Keep the green color */
+    }
+}
+
+/* Apply animation on hover */
+.check:hover {
+    animation: boop 1s ease forwards; /* Run animation once */
+}
+
+.itemName + .trash {
+    margin-left: 20px;
+}
+
+
+
+
+
+

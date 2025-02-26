@@ -11,9 +11,11 @@ const CategoryCard: React.FC<CategoryItem> = ({category, items}) => {
             <ul className={classes.itemsList}>
                 {items.map((item:string, index:number) => (
                         <li className={classes.item} key={index}>
-                            <span>{item}</span>
-                                <div className={classes.buttons}><button><FontAwesomeIcon icon={faTrash} /></button>
-                                    <button><FontAwesomeIcon icon={faCircleCheck} /></button></div>
+                            <div>
+                                <span className={classes.itemName}>{item}</span>
+                                <button className={classes.trash}><FontAwesomeIcon icon={faTrash} /></button>
+                                <button className={classes.check}><FontAwesomeIcon icon={faCircleCheck} /></button>
+                            </div>
                         </li>
                 ))}
             </ul>

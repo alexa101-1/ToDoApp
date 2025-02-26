@@ -11,6 +11,19 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx">
+      window.addEventListener('load', () => {
+        const items = document.querySelectorAll('.item'); // Get all .item elements
+        const categoryContainer = document.querySelector('.categoryContainer'); // Get the category container
+
+        // Ensure there are items before accessing offsetHeight
+        if (items.length > 0) {
+          const itemHeight = items[0].offsetHeight; // Get the height of the first item
+          categoryContainer.minHeight = `${itemHeight * 5}px`; // Set the min-height for the container to fit 5 items
+        } else {
+          console.error("No .item elements found!"); // Log an error if no items are found
+        }
+      });
+    </script>
   </body>
 </html>
