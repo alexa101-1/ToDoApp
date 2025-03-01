@@ -10,13 +10,15 @@ const CategoryCard: React.FC<CategoryItem> = ({category, items}) => {
             <h4 className={classes.title}>{category}</h4>
             <ul className={classes.itemsList}>
                 {items.map((item:string, index:number) => (
-                        <li className={classes.item} key={index}>
-                            <div>
-                                <span className={classes.itemName}>{item}</span>
+                    <li className={classes.item} key={index}>
+                        <div>
+                            <span className={classes.itemName}>{item}</span>
+                            <div className={classes.buttons}>
                                 <button className={classes.trash}><FontAwesomeIcon icon={faTrash} /></button>
                                 <button className={classes.check}><FontAwesomeIcon icon={faCircleCheck} /></button>
                             </div>
-                        </li>
+                        </div>
+                    </li>
                 ))}
             </ul>
         </div>

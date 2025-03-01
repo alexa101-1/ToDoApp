@@ -1,7 +1,14 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import classes from "./Today.module.css";
 import CategoryCard from "./basic/CategoryCard.tsx";
+import {useAppSelector, useAppDispatch} from "../app/hooks.ts";
+import {
+    selectTodayData,
+    selectTodayDataStatus,
+    selectTodayDataError,
+    fetchTodayData
+} from "../features/data/todayDataSlice.ts";
 
 interface CategoryItem {
     category: string; // The category name, e.g., "Work", "Sports", "Fun"
@@ -9,20 +16,29 @@ interface CategoryItem {
 }
 
 const Today: React.FC = () => {
-    const baseURL = import.meta.env.VITE_BASE_URL;
-    const [items, setItems] = useState<CategoryItem[]>([])
+    const dispatch = useAppDispatch()
+    const items = useAppSelector(selectTodayData)
+    const error = useAppSelector(selectTodayDataError)
+    const status = useAppSelector(selectTodayDataStatus)
 
     useEffect(() => {
-        fetch(`${baseURL}/today`).then(res => res.json()).then(data => {
-            setItems(data)
-        }).catch(err => console.log(`Error fetching today's events`, err));
-    }, []);
+        if(status === 'idle'){
+            dispatch(fetchTodayData())
+        }
+    }, [status, dispatch]);
+
+    if(status === 'loading'){
+        return <div>Loading...</div>
+    }
+    if(status === 'failed'){
+        return <div>Error: {error}</div>
+    }
 
 
     return (
         <div className={classes.dailyPageContainer}>
             <ul className={classes.dailyContainer}>
-                {items.map((item, index) => (
+                {items.map((item: CategoryItem, index: number) => (
                     <li key={index}> <CategoryCard  category={item.category} items={item.items}/> </li>
                 ))}
             </ul>

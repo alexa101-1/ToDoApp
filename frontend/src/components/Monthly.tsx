@@ -1,37 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Calendar, momentLocalizer} from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-
-interface Event {
-    title: string,
-    start: Date,
-    end: Date
-}
-
+import {useAppDispatch, useAppSelector} from "../app/hooks.ts";
+import {SelectEvents, SelectEventsStatus, SelectEventsError, fetchEvents} from "../features/data/eventsSlice.ts";
+import classes from './Monthly.module.css'
 const localizer = momentLocalizer(moment);
 
 const Monthly: React.FC = () => {
-    const [events, setEvents] = useState<Event[]>([])
+    const dispatch = useAppDispatch()
+    const events = useAppSelector(SelectEvents)
+    const status = useAppSelector(SelectEventsStatus)
+    //const error = useAppSelector(SelectEventsError)
+
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/monthly")
-            .then((res) => res.json())
-            .then((data) => {
-                const formattedData = data.map((event:any) =>({
-                    ...event,
-                    start: new Date(event.start),
-                    end: new Date(event.end)
-                }))
-                console.log(formattedData)
-                setEvents(formattedData)
-               })
-            .catch((err) => console.error("Error fetching events:", err));
-
-    }, []);
+        if(status === 'idle'){
+            dispatch(fetchEvents())
+        }
+    }, [status, dispatch]);
 
     return (
-        <div style={{ height: "80vh", padding: "20px" }}>
+        <div className={classes.calendarContainer} style={{ height: "80vh" }}>
             <h1>My Monthly Overview</h1>
             <Calendar
                 localizer={localizer}
