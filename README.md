@@ -51,66 +51,67 @@ ToDoApp/frontend/
 ├── package.json
 ├── package-lock.json
 ├── public
-│   └── cloud.webp
+│   └── cloud.webp
 ├── README.md
 ├── src
-│   ├── app
-│   │   ├── hooks.ts
-│   │   └── store.ts
-│   ├── App.css
-│   ├── App.tsx
-│   ├── assets
-│   │   └── react.svg
-│   ├── colors.css
-│   ├── components
-│   │   ├── basic
-│   │   │   ├── CategoryCard.module.css
-│   │   │   ├── CategoryCard.tsx
-│   │   │   ├── SelfAssignedLittleCard.module.css
-│   │   │   └── SelfAssignedLittleCard.tsx
-│   │   ├── buttons
-│   │   │   ├── HomeButton.module.css
-│   │   │   └── HomeButton.tsx
-│   │   ├── Home.module.css
-│   │   ├── Home.tsx
-│   │   ├── Monthly.module.css
-│   │   ├── Monthly.tsx
-│   │   ├── Navbar.module.css
-│   │   ├── Navbar.tsx
-│   │   ├── Today.module.css
-│   │   ├── Today.tsx
-│   │   ├── Weekly.module.css
-│   │   └── Weekly.tsx
-│   ├── data
-│   │   └── events.json
-│   ├── features
-│   │   └── data
-│   │       ├── eventsSlice.ts
-│   │       └── todayDataSlice.ts
-│   ├── index.css
-│   ├── main.tsx
-│   ├── types
-│   │   ├── cardCategory.ts
-│   │   ├── index.ts
-│   │   └── mySpace.ts
-│   └── vite-env.d.ts
+│   ├── app
+│   │   ├── hooks.ts
+│   │   └── store.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── colors.css
+│   ├── components
+│   │   ├── basic
+│   │   │   ├── CategoryCard.module.css
+│   │   │   ├── CategoryCard.tsx
+│   │   │   ├── SelfAssignedLittleCard.module.css
+│   │   │   └── SelfAssignedLittleCard.tsx
+│   │   ├── buttons
+│   │   │   ├── HomeButton.module.css
+│   │   │   └── HomeButton.tsx
+│   │   ├── Home.module.css
+│   │   ├── Home.tsx
+│   │   ├── Monthly.module.css
+│   │   ├── Monthly.tsx
+│   │   ├── Navbar.module.css
+│   │   ├── Navbar.tsx
+│   │   ├── Today.module.css
+│   │   ├── Today.tsx
+│   │   ├── Weekly.module.css
+│   │   └── Weekly.tsx
+│   ├── data
+│   │   └── events.json
+│   ├── features
+│   │   └── data
+│   │       ├── eventsSlice.ts
+│   │       └── todayDataSlice.ts
+│   ├── index.css
+│   ├── main.tsx
+│   ├── types
+│   │   ├── cardCategory.ts
+│   │   ├── index.ts
+│   │   └── mySpace.ts
+│   └── vite-env.d.ts
 ├── tsconfig.app.json
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
 
+
 ### Backend
 
 ToDoApp/backend/
 ├── data
-│   ├── events.json
-│   ├── items.json
-│   ├── myspace.json
-│   └── weeklyItems.json
+│   ├── events.json
+│   ├── items.json
+│   ├── myspace.json
+│   └── weeklyItems.json
 ├── package.json
 ├── package-lock.json
 ├── routes
-│   └── routes.js
+│   └── routes.js
 └── server.js
 
 ## Available Scripts
