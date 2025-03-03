@@ -24,19 +24,37 @@ npm or yarn
 
 ### Installation
 
-1. **Clone the repository**:
+1.**Clone the repository**:
 git clone https://github.com/alexa101-1/ToDoApp.git
 cd todo-app
 
 2.**Install dependencies**:
+
+**Frontend**
+cd frontend
 npm install
-# or
+### or
 yarn install
 
-2.**Start the development server**:
-npm run dev
-# or
-yarn dev
+**Backend**
+cd backend
+npm install
+### or
+yarn install
+
+
+
+2.**Starting the Servers**
+  a.Start the mock backend server:
+    npm run start
+    ### or
+    yarn start
+    
+  b.Start the frontend development server:
+    cd frontend
+    npm run dev
+    ### or
+    yarn dev
 
 Open your browser and navigate to http://localhost:5173
 
