@@ -1,23 +1,33 @@
 import classes from './Home.module.css'
-import {useEffect, useState} from "react";
-import {UpcomingEvent} from "../types/mySpace.ts";
-import {ReadingListItem} from "../types/mySpace.ts";
+import {useEffect} from "react";
+import {useAppDispatch, useAppSelector} from "../app/hooks.ts";
+import {UpcomingEvent, ReadingListItem} from "../types/mySpace.ts";
+import {
+    fetchReadingListItems, fetchUpcomingEvents,
+    SelectReadingListItems, SelectReadingListItemsStatus,
+    SelectUpcomingEvents,
+    SelectUpcomingEventsStatus
+} from "../features/data/mySpaceSlice.ts";
 
 
 const Home: React.FC = () => {
-    const baseURL = import.meta.env.VITE_BASE_URL;
-    const [upcomingEvents, setUpcomingEvents] = useState<UpcomingEvent[]>([])
-    const [reatingListItems, setReadingListItems] = useState<ReadingListItem[]>([])
+    const dispatch = useAppDispatch()
+    const upcomingEvents = useAppSelector(SelectUpcomingEvents)
+    const readingListItems = useAppSelector(SelectReadingListItems)
+    const upcomingEventsStatus = useAppSelector(SelectUpcomingEventsStatus)
+    const readingListItemsStatus = useAppSelector(SelectReadingListItemsStatus)
 
     useEffect(() => {
-        fetch(`${baseURL}/myspace`)
-            .then(res => res.json())
-            .then(data => {
-                setUpcomingEvents(data.upcomingEvents)
-                setReadingListItems(data.readingList)
-            })
-            .catch(error => console.log('Error fetching upcoming events', error))
-    }, []);
+        if(readingListItemsStatus === 'idle') {
+            dispatch(fetchReadingListItems())
+        }
+        if(upcomingEventsStatus === 'idle'){
+            dispatch(fetchUpcomingEvents())
+        }
+
+        console.log(readingListItems, upcomingEvents)
+
+    }, [dispatch, readingListItemsStatus, upcomingEventsStatus, readingListItems, upcomingEvents]);
 
 
     return (
@@ -26,14 +36,14 @@ const Home: React.FC = () => {
                 <div className={classes.news}></div>
                 <div className={classes.upcomingEvents}>
                     <ul>
-                        {upcomingEvents.map((item) => (
+                        {upcomingEvents.map((item: UpcomingEvent) => (
                             <li key={item.id}>{item.title}</li>
                         ))}
                     </ul>
                 </div>
                 <div className={classes.readingList}>
                     <ul>
-                        {reatingListItems.map((item) => (
+                        {readingListItems.map((item:ReadingListItem) => (
                             <li key={item.id}>{item.title}</li>
                         ))}
                     </ul>

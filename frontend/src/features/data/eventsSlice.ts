@@ -6,13 +6,13 @@ interface Event {
     end: Date
 }
 
-interface EventState {
+interface EventsState {
     entities: Event[];
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
     error: string | null
 }
 
-const initialState: EventState = {
+const initialState: EventsState = {
     entities: [],
     status: 'idle',
     error: null
