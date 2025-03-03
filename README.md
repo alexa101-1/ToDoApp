@@ -45,16 +45,17 @@ yarn install
 
 
 2.**Starting the Servers**
-  a.Start the mock backend server:
-    npm run start
-    ### or
-    yarn start
+
+ ### a.Start the mock backend server:
+     npm run start
+     ### or
+     yarn start
     
-  b.Start the frontend development server:
-    cd frontend
-    npm run dev
-    ### or
-    yarn dev
+  ### b.Start the frontend development server:
+      cd frontend
+      npm run dev
+      ### or
+      yarn dev
 
 Open your browser and navigate to http://localhost:5173
 
